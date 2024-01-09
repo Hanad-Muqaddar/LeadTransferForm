@@ -31,27 +31,27 @@ def main():
         with col3:
             phone_number = st.text_input("Phone Number", value="")
         with col4:
-            email_address = st.text_input("Email Address", value="")
+            lead_submit_data = st.text_input("Lead Submit Date", value="2024-01-09 12:00:40")
         
 
-        col5, col6 = st.columns(2, gap="medium")
-        with col5:
-            Address = st.text_input("Address", value="")
-        with col6:
-            city = st.text_input("City", value="")
+        # col5, col6 = st.columns(2, gap="medium")
+        # with col5:
+        #     Address = st.text_input("Address", value="")
+        # with col6:
+        #     city = st.text_input("City", value="")
 
 
-        col7, col8 = st.columns(2, gap="medium")
-        with col7:
-            State = st.text_input("State", value="")
-        with col8:
-            Zip = st.text_input("Zip", value="")
+        # col7, col8 = st.columns(2, gap="medium")
+        # with col7:
+        #     State = st.text_input("State", value="")
+        # with col8:
+        #     Zip = st.text_input("Zip", value="")
         
-        col9, col10 = st.columns(2, gap="medium")
-        with col9:
-            DOB = st.text_input("D.O.B", value="")
-        with col10:
-            Gender = st.text_input("Gender", value="")
+        # col9, col10 = st.columns(2, gap="medium")
+        # with col9:
+        #     DOB = st.text_input("D.O.B", value="")
+        # with col10:
+        #     Gender = st.text_input("Gender", value="")
         
         
         source_url = st.text_input("Source Url", value="")
@@ -61,9 +61,8 @@ def main():
 
     if submit_button:
         url = f"""https://global-digital-media.trackdrive.com/api/v1/leads?caller_id={phone_number}
-                &lead_token=f1be4fda3aa5488eb2a1684f3d1090b5&source_url={source_url}&zip={Zip}
-                &first_name={first_name}&last_name={last_name}&email={email_address}&address={Address}
-                &city={city}&state={State}&dob={DOB}&gender={Gender}"""
+                &lead_token=f1be4fda3aa5488eb2a1684f3d1090b5&traffic_source_id=2195&source_url={source_url}
+                &first_name={first_name}&last_name={last_name}&original_lead_submit_date={lead_submit_data}"""
         headers= {}
         payload = {}
         try:
